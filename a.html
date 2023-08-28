@@ -1,6 +1,16 @@
 <script src="a.js"></script>
 <script>
-	var url = window.location.href;
-	console.log(url);
-	//window.location.replace("http://www.w3schools.com");
+	var url = window.location.href.split('?')[1];
+	function go_home(){
+		window.location.replace("http://" + ip + ":2004" + "/");
+	}
+	if (!url){
+		go_home();
+	} else {
+		if (url.split('=')[0]=='downloadbylink') {
+			window.location.replace("http://" + ip + ":2003" + "/" + url);
+		} else {
+			window.location.replace("http://" + ip + ":2004" + "/");
+		}
+	}
 </script>
