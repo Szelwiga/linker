@@ -2,15 +2,15 @@
 <script>
 	var url = window.location.href.split('?')[1];
 	function go_home(){
-		window.location.replace("http://" + ip + ":2004" + "/");
+		window.location.href("http://" + ip + ":2004" + "/");
 	}
 	if (!url){
 		go_home();
 	} else {
 		if (url.split('=')[0]=='downloadbylink') {
-			window.location.replace("http://" + ip + ":2003" + "/" + url);
+			window.location.href("http://" + ip + ":2003" + "/" + url);
 		} else {
-			window.location.replace("http://" + ip + ":2004" + "/");
+			window.location.href("http://" + ip + ":2004" + "/");
 		}
 	}
 </script>
