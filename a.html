@@ -1,3 +1,10 @@
+<html>
+	<head>
+	</head>
+	<body>
+		<div id="div"></div>
+	</body>
+</html>
 <script src="a.js"></script>
 <script>
 	var url = window.location.href.split('?')[1];
@@ -8,7 +15,8 @@
 		go_home();
 	} else {
 		if (url.split('=')[0]=='downloadbylink') {
-			window.location.href("http://" + ip + ":2003" + "/" + url);
+			document.getElementById('div').innerHTML = "http://" + ip + ":2003" + "/" + url;
+			//window.location.href("http://" + ip + ":2003" + "/" + url);
 		} else {
 			window.location.href("http://" + ip + ":2004" + "/");
 		}
