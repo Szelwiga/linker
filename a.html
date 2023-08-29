@@ -2,7 +2,8 @@
 	<head>
 	</head>
 	<body>
-		<div id="div"></div>
+		<input type="text" value="Hello World" id="inp">
+		<button onclick="copyText()">Copy text</button>
 	</body>
 </html>
 <script src="a.js"></script>
@@ -10,13 +11,26 @@
 	var url = window.location.href.split('?')[1];
 
 	if (!url){
-		window.location.href = "http://" + ip + ":2004" + "/";
+		document.getElementById('inp').value = "http://" + ip + ":2003";
 	} else {
 		if (url.split('=')[0]=='downloadbylink') {
-			document.getElementById('div').innerHTML = "<a href='http://" + ip + ":2003" + "/" + url + "' download> KILK</a>";
-			window.location.href = "http://" + ip + ":2003" + "/" + url;
+			document.getElementById('inp').value = "http://" + ip + ":2003" + "/" + url;
 		} else {
-			window.location.href = "http://" + ip + ":2004" + "/";
+			document.getElementById('inp').value = "http://" + ip + ":2003";
 		}
+	}
+	function myFunction() {
+		// Get the text field
+		var copyText = document.getElementById("inp");
+
+		// Select the text field
+		copyText.select();
+		copyText.setSelectionRange(0, 99999); // For mobile devices
+
+		// Copy the text inside the text field
+		navigator.clipboard.writeText(copyText.value);
+
+		// Alert the copied text
+		//alert("Copied the text: " + copyText.value);
 	}
 </script>
