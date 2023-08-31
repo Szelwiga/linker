@@ -15,6 +15,7 @@
 
 	if (!url){
 		document.getElementById('inp').value = "https://" + ip + ":2003";
+		document.location.href = "https://" + ip + ":2003" + "/";
 	} else {
 		if (url.split('=')[0]=='downloadbylink') {
 			document.getElementById('inp').value = "http://" + ip + ":2003" + "/" + url;
@@ -22,6 +23,7 @@
 			document.location.href = "https://" + ip + ":2003" + "/" + url;
 		} else {
 			document.getElementById('inp').value = "https://" + ip + ":2003";
+			document.location.href = "https://" + ip + ":2003" + "/";
 		}
 	}
 	function copyText() {
