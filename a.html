@@ -14,14 +14,14 @@
 	var url = window.location.href.split('?')[1];
 
 	if (!url){
-		document.getElementById('inp').value = "http://" + ip + ":2003";
+		document.getElementById('inp').value = "https://" + ip + ":2003";
 	} else {
 		if (url.split('=')[0]=='downloadbylink') {
 			document.getElementById('inp').value = "http://" + ip + ":2003" + "/" + url;
-			document.getElementById('div').value = "The download will begin soon.";
+			document.getElementById('div').innerHTML = "The download will begin soon.";
 			document.location.href = "https://" + ip + ":2003" + "/" + url;
 		} else {
-			document.getElementById('inp').value = "http://" + ip + ":2003";
+			document.getElementById('inp').value = "https://" + ip + ":2003";
 		}
 	}
 	function copyText() {
